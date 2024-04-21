@@ -406,6 +406,7 @@ saveToFile() {
 > I DO plan on continuing this project and expanding this documentation when I learn more.
 
 # References
-- [Debian Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
+- [Dialog - Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
+- [Bash - Man Pages](https://dyn.manpages.debian.org/bookworm/bash/bash.1.en.html)
 - [LinuxCommand](https://linuxcommand.org/lc3_adv_dialog.php)
 - [FreeCodeCamp](https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/#:~:text=Bash%20scripting%20is%20a%20powerful,tasks%20in%20Unix%2FLinux%20systems.)
