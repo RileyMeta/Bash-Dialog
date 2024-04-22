@@ -14,6 +14,10 @@ dialog --msgbox "Hello World" 0 0
 `--msgbox "your text here"` - tells dialog what to render
 
 `0 0` - defines the height/width of the dialog menu (0 = auto)
+> [!TIP]
+> If you want to make the < OK > button perform functions (like going back to the previous menu) you can use a `case` function to capture and assign the Exit Code `0`.
+>
+> We will go over this more in just a moment.  
 
 # Optional Arguments:
 **For more arguments please refer to the [Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html).**
@@ -202,6 +206,7 @@ So long as you don't explicitly tell the app to `exit` then it should re-open wh
 The layout of the above file only has 1 predefined function that gets called at the end of the file with `main`.
 
 > See the below Advanced Menu Example for more information.
+
 
 ## Advanced Menu Example
 ![image](https://github.com/RileyMeta/Bash-Dialog/assets/32332593/18930555-8afa-40ad-9de8-0e2a2c55e43e)
