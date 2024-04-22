@@ -192,7 +192,9 @@ Paying attention to the above file actually explains a lot of how it works, most
 
 First it uses the built-in bash command `clear` to remove all text, then using `echo` it prints the text to the newly cleared Terminal.
 
-You could chain as many commands together in this space as you'd want, including error handling. This can be anything from other applications (example: fdisk, cp, mv, etc) to pre-defined bash functions.
+You could chain as many commands together in this space as you'd want, including error handling. This can be anything from other applications (example: cfdisk, fdisk, cp, mv, nano, etc) to pre-defined bash functions.
+
+So long as you don't explicitly tell the app to `exit` then it should re-open when the secondary app closes. 
 
 The layout of the above file only has 1 predefined function that gets called at the end of the file with `main`.
 
