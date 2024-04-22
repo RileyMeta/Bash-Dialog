@@ -498,9 +498,9 @@ extraButton
 ## Development Notes: 
 > [!IMPORTANT]
 > The information in here might not be 100% accurate, please do your own research.
+> 
+> Everything I've accumulated here is from personal testing, if there are better ways to do things, please submit them in a Pull Request
 
-> [!NOTE]
-> I DO plan on continuing this project and expanding this documentation when I learn more.
 
 # References
 - [Dialog - Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
