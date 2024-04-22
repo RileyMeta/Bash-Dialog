@@ -458,8 +458,42 @@ Next up comes the actual code of this dialog box:
 - Similar to the previous, we're going to force it to search for the exit code with our `$dialog_exit_code` variable
 - Followed by the `else` which is almost* always our `No` button (The label can also be redefined wtih `--no-label "Label"`)
 - This is again ended with `fi` to tell Bash that it's done reading the `if` statement.
+
 > [!TIP]
 > Adding the additional `then` statements are necessary for this to work as the commands are only executed after being defined. 
+
+Alternatively, you can use the `case` function like it's a `--menu`, but with the Exit Codes instead of the Menu Labels (numbers)
+```bash
+#!/bin/bash
+
+extraButton() {
+        dialog --clear \
+        --backtitle "Dialog Tutorials" \
+        --title "How to use the Extra Button" \
+        --extra-button \
+        --extra-label "Secrets" \
+        --yesno "Press <Secrets> to see some Secrets" 0 0
+
+    dialog_exit_code=$?
+
+    case $dialog_exit_code in
+    0)  clear
+        echo "Yes button was pressed"
+    ;;
+    1)  clear
+        echo "No button was pressed"
+    ;;
+    3)  clear
+        echo "Extra Button was pressed"
+    ;;
+    esac
+}
+
+extraButton
+```
+> [!NOTE]
+> This was also designed as an internal Function, so it can be called from another menu.
+
 
 ## Development Notes: 
 > [!IMPORTANT]
