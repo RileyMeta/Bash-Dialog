@@ -97,7 +97,7 @@ dialog --msgbox "Hello World" 0 0
 ## Exit Codes
 **In Bash whenever a command or application is ran it will report to the shell an "Exit Code" which can be used to determine user-input in Dialog**
 
-The direct outputs of these can be both defined in the later section, and or called directly from your script. 
+The direct outputs of these can be both defined in the later section, and or called directly from your script.
 
 `STDIN` (Standard input) - this is the file handle that your process reads to get information from you.
 > This default value is always used for the "Okay" button and cannot be specified
@@ -107,6 +107,8 @@ The direct outputs of these can be both defined in the later section, and or cal
 
 `STDERR` (Standard error) - your process writes diagnostic output to this file handle.
 > `--stderr` can also be used in Dialog to specify, per-menu 
+
+If you want to see what an exit code is directly from the Terminal you can use the command `echo "$?"` and it'll print the Exit Code. 
 
 ## Default Dialog Values
 `DIALOGOPTS` - Define this variable to apply any of the common options to each widget. Most of the common options are reset before processing each widget. If you set the options in this environment variable, they are applied to dialog's state after the reset. As in the "--file" option, double-quotes and backslashes are interpreted. The "--file" option is not considered a common option (so you cannot embed it within this environment variable).
