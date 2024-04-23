@@ -65,7 +65,7 @@ dialog --msgbox "Hello World" 0 0
 `\n` - Works like a line break
 
 `\` - Works like a line continuation for bash and commands 
-> Not necessary for elements inside double quotes `" "`
+> Not necessary for elements inside double quotes `" "` (unless it also contains double quotes, then it should be `\"` to stop it from ending your script)
 
 ## Advanced Styling
 `\Zn` - Reset all Styling
