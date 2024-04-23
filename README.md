@@ -3,6 +3,8 @@
 
 Along with tips and tricks for adding basic functionality with Bash scripting and interactive and easily modifiable examples.
 
+### How to use the examples
+Every example in this should be able to be run in the terminal with `./example-name`. You may need to use `chmod +x` to allow it to be executable. 
 
 ## Absolute Basics
 For a Dialog menu to function the only things you need are some basic flags
