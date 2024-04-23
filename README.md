@@ -530,6 +530,8 @@ This is might be a new way of invoking Dialog, but it's Virtually the same as th
 - Next we setup `dialog` as normal with our arguments and styling.
 - `--output-fd 1` will override and export the user-input to Exit Code `1` (stdout) which we call in the next part.
 - Lastly we make the actual `if`/`else` statement: When the user types something and presses the `< OK >` button it will echo it directly to the Terminal. When the `< Cancel >` button is pressed it will print "User pressed Cancel" to the Terminal. 
+> [!TIP]
+> If you would like to limit the amount of characters that the user can input, use `----max-input` (followed by a number) 
 
 ## Development Notes: 
 > [!IMPORTANT]
