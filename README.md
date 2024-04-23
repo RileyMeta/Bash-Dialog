@@ -1,7 +1,7 @@
 # Bash and Dialog scripting
-**This is a comprehensive guide on how to use Dialog and Bash to create terminal-based menus.**
+#### This is a comprehensive guide on how to use Dialog and Bash to create terminal-based menus.
 
-**Along with tips and tricks for adding basic functionality with Bash scripting.** 
+Along with tips and tricks for adding basic functionality with Bash scripting and interactive and easily modifiable examples.
 
 
 ## Absolute Basics
