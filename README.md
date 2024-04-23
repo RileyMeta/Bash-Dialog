@@ -90,7 +90,8 @@ dialog --msgbox "Hello World" 0 0
 
 `\Z3` - ANSI Colors: Yellow
 
-`\Z4` - ANSI Colors: Blue
+`\Z4` - ANSI Colors: Bluen the < Cancel > button is pressed it will print "User pressed Cancel" to the Terminal.
+
 
 `\Z5` - ANSI Colors: Magenta
 
@@ -499,6 +500,36 @@ extraButton
 > [!NOTE]
 > This was also designed as an internal Function, so it can be called from another menu.
 
+## Saving User Input (Text)
+![image](https://github.com/RileyMeta/Bash-Dialog/assets/32332593/7af1a271-210f-423f-8e1b-8bf4c0b07ae1)
+```bash
+#!/bin/bash
+
+get_user_input() {
+    local input
+    input=$(dialog --clear \
+    --backtitle "Dialog Tutorials" \
+    --title "Save User Input" \
+    --inputbox "Please type your Name:" 8 40 \
+    --output-fd 1)
+
+    if [ $? -eq 0 ]; then
+        clear
+        echo "User input: $input"
+    else
+        clear
+        echo "User pressed cancel."
+    fi
+}
+
+get_user_input
+```
+This is might be a new way of invoking Dialog, but it's Virtually the same as the rest.
+- First we tell bash that we're going to be using `local` variables (in THIS function only).
+- Second we tell Bash that the function's name is `input` which we later envoke with `$input`.
+- Next we setup `dialog` as normal with our arguments and styling.
+- `--output-fd 1` will override and export the user-input to Exit Code `1` (stdout) which we call in the next part.
+- Lastly we make the actual `if`/`else` statement: When the user types something and presses the `< OK >` button it will echo it directly to the Terminal. When the `< Cancel >` button is pressed it will print "User pressed Cancel" to the Terminal. 
 
 ## Development Notes: 
 > [!IMPORTANT]
