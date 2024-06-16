@@ -535,6 +535,59 @@ This is might be a new way of invoking Dialog, but it's Virtually the same as th
 > [!TIP]
 > If you would like to limit the amount of characters that the user can input, use `----max-input` (followed by a number) 
 
+# Extensive ANSI Colors List
+```bash
+WHITE="\e[97m"
+BLACK="\e[30m"
+GRAY="\e[90m"	
+RED="\e[31m"
+GREEN="\e[32m"
+YELLOW="\e[33m"
+BLUE="\e[34m"
+MAGENTA="\e[35m"
+CYAN="\e[36m"
+LIGHT_GRAY="\e[37m"
+LIGHT_RED="\e[91m"
+LIGHT_GREEN="\e[92m"
+LIGHT_YELLOW="\e[93m"
+LIGHT_BLUE="\e[94m"
+LIGHT_MAGENTA="\e[95m"
+LIGHT_CYAN="\e[96m"
+
+BOLD="\e[1m"
+FAINT="\e[2m"
+ITALICS="\e[3m"
+UNDERLINE="\e[4m"
+FLASHING="\e[5m"
+FLASHING2="\e[6m"
+INVISIBLE="\e[7m"
+THROUGH-LINE="\e[9m"
+
+BACKGROUND_WHITE="\e[7m" # With Black Text
+
+BACKGROUND_BLACK="\e[40m"
+BACKGROUND_RED="\e[41m"
+BACKGROUND_GREEN="\e[42m"
+BACKGROUND_YELLOW="\e[43m"
+BACKGROUND_BLUE="\e[44m"
+BACKGROUND_MAGENTA="\e[45m"
+BACKGROUND_CYAN="\e[46m"
+BACKGROUND_GRAY="\e[100m"
+BACKGROUND_LIGHT_GRAY="\e[47m"
+BACKGROUND_LIGHT_RED="\e[101m"
+BACKGROUND_LIGHT_GREEN="\e[102m"
+BACKGROUND_LIGHT_YELLOW="\e[103m"
+BACKGROUND_LIGHT_BLUE="\e[104m"
+BACKGROUND_LIGHT_MAGENTA="\e[105m"
+BACKGROUND_LIGHT_CYAN="\e[106m"
+BACKGROUND_WHITE="\e[107m" # With Whtie Text
+
+ENDSTYLE="\e[0m"
+```
+Any of the above can be added to a Bash Script to add their respective effects
+`echo -e "${UNDERLINE}Text you want to be underlined${ENDSTYLE}"`
+> You can reassign any of the names as you see fit.
+
 ## Development Notes: 
 > [!IMPORTANT]
 > The information in here might not be 100% accurate, please do your own research.
