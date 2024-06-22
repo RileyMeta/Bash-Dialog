@@ -535,7 +535,7 @@ This is might be a new way of invoking Dialog, but it's Virtually the same as th
 > [!TIP]
 > If you would like to limit the amount of characters that the user can input, use `----max-input` (followed by a number) 
 
-# Extensive ANSI Colors List
+# Extensive ANSI Colors List (Terminal Only)
 ```bash
 WHITE="\e[97m"
 BLACK="\e[30m"
@@ -563,7 +563,7 @@ FLASHING2="\e[6m"
 INVISIBLE="\e[7m"
 THROUGH-LINE="\e[9m"
 
-BACKGROUND_WHITE="\e[7m" # With Black Text
+BACKGROUND_WHITE_READABLE="\e[7m" # With Black Text
 
 BACKGROUND_BLACK="\e[40m"
 BACKGROUND_RED="\e[41m"
