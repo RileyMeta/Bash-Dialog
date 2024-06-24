@@ -535,6 +535,29 @@ This might be a new way of invoking Dialog, but it's Virtually the same as the r
 > [!TIP]
 > If you would like to limit the amount of characters that the user can input, use `----max-input` (followed by a number) 
 
+## Dynamic Menu Selection
+If you're intending to have the menu items on a primary menu update and highlight the next option instead of defaulting to the Very First option, you can use 
+`--default-item` with any variable you need/want, in this case we'll use `"$default_item"`. By default `--default-item` is set to `1`, or the first menu item.
+
+To change each item you need to re-assign the value of `default_item` before the user returns to the primary menu.
+
+Example:
+```bash
+dialog --clear --title "Dynamic Text" \
+--default-item "$default_item"
+--menu "This is my menmu" 0 0 0
+...
+```
+Example changing menu item:
+```bash
+...
+if [[ $? = 0 ]]; then
+    default_item=2
+    main
+else
+    main
+fi 
+```
 ## Dynamic Text
 > [!TIP]
 > This works for any text. You can change button labels, titles, texts, backtitles, and even menu options.
