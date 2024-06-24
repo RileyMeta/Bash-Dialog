@@ -548,7 +548,7 @@ dialog --clear --title "Dynamic Text" \
 --menu "This is my menmu" 0 0 0
 ...
 ```
-Example changing menu item:
+Example changing menu item from another menu:
 ```bash
 ...
 if [[ $? = 0 ]]; then
