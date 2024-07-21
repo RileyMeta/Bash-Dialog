@@ -92,8 +92,7 @@ dialog --msgbox "Hello World" 0 0
 
 `\Z3` - ANSI Colors: Yellow
 
-`\Z4` - ANSI Colors: Bluen the < Cancel > button is pressed it will print "User pressed Cancel" to the Terminal.
-
+`\Z4` - ANSI Colors: Blue
 
 `\Z5` - ANSI Colors: Magenta
 
