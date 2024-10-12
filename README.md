@@ -196,6 +196,28 @@ main() {
 
 main
 ```
+> OR 
+```bash
+#!/bin/bash
+
+main() {
+    CHOICE=$(dialog --clear \
+    --backtitle "My Application Title" \
+    --title "Application Page" \
+    --menu "Page Content would go here." 0 0 0 \
+    1 "Option 1" \
+    2 "These can be named anything" \
+    3 "Option 3" \
+    2>&1 >/dev/tty)
+
+    case $CHOICE in
+        1 ) do_thing_1;;
+        2 ) do_thing_2;;
+        3 ) do_thing_3;;
+    esac
+}
+```
+
 ### Launching Commands
 Paying attention to the above file actually explains a lot of how it works, most importantly is the indented parts immediately after both `then` and `else`. 
 
