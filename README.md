@@ -171,6 +171,13 @@ Bash _is_ an entire scripting language. Although it may not be as powerful as so
 
 > See the Basic Example below for more info
 
+### Linking multiple files
+Bash does allow for linking of multiple files as if they were a single file with one of the following:
+```bash
+source ./second_script.sh
+. ./second_script.sh
+```
+
 ## Basic Example Menu
 Often you'll find that almost all scripts used in bash will contain what is called a "shebang". This is `#` (shell) `!` (bang) followed by `/bin/bash` (the bash shell path). This marks the file as a bash script with commands inside it that should be executed. 
 
