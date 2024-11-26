@@ -178,6 +178,34 @@ source ./second_script.sh
 . ./second_script.sh
 ```
 
+## Function Parameters
+Thanks to the way bash functions are called (`function` instead of `function()`) setting up function parameters is a little confusing unless you know what to do. Functions tend to count the immediate next text as a parameter, so `function 1 2 3 4` could have 4 different parameters, which are outlined below in an example.
+```bash
+error() {
+    local parameter=$1
+    local parameter=$2
+    local parameter=$3
+    local parameter=$4
+
+    ...
+}
+```
+
+## Script Launch Arguments
+Similar to how function parameters are issued, bash scripts can also take in parameters (or run-time flags) that change the way your script works, below is a simple example for adding a `--help` flag.
+```bash
+if [[ '$1' == '--help' ]]; then
+    echo "--help opens this menu"
+fi
+```
+If you are more comfortable using case statements:
+```bash
+case $1 in
+    '--help') echo "--help opens this menu" ;;
+esac
+```
+
+
 ## Basic Example Menu
 Often you'll find that almost all scripts used in bash will contain what is called a "shebang". This is `#` (shell) `!` (bang) followed by `/bin/bash` (the bash shell path). This marks the file as a bash script with commands inside it that should be executed. 
 
