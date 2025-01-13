@@ -22,7 +22,9 @@ dialog --msgbox "Hello World" 0 0
 > We will go over this more in just a moment.  
 
 # Optional Arguments:
-**For more arguments please refer to the [Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html).**
+> [!NOTE]
+> For more arguments please refer to the [Man Pages](https://manpages.debian.org/stretch/dialog/dialog.1.en.html)
+> or look at the [all_menus.sh](https://github.com/RileyMeta/Bash-Dialog/main/all_menus.sh) file to interactively see all dialog menu options.
 
 `--backtitle "Application Name Here"` - This is the text displayed in the background, often as an Application Name.
 
