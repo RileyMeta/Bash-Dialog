@@ -1,4 +1,5 @@
 #!/bin/bash
+# Notice that it's common practice to split lines of a long command by separating the lines with a single backslash.
 
 BACKTITLE="Dialog Tutorials"
 
@@ -58,6 +59,7 @@ main() {
     esac
 }
 
+# Syntax: dialog --menu <text> <height> <width> <menu-height> <tag> <item>
 menu() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -66,6 +68,7 @@ menu() {
     1 "Redundant, huh"
 }
 
+# Syntax: dialog --msgbox <text> <height> <width>
 msgbox() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -73,6 +76,8 @@ msgbox() {
     --msgbox "This is a message box." 10 40
 }
 
+# Syntax: dialog --yesno <text> <height> <width>
+# As you can see, I've wrapped this entire dialog menu in an If statement, to capture the user-input.
 yesno() {
     if dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -84,13 +89,16 @@ yesno() {
     fi
 }
 
+# Syntax: dialog --inputbox <text> <height> <width> <initial-text/placeholder>
 inputbox() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
     --title "InputBox" \
-    --inputbox "Enter your text here" 10 40
+    --inputbox "Enter your text here" 10 40 "Placeholder"
 }
 
+# Syntax: dialog --passwordbox <text> <height> <width> <init-text/placeholder>
+# Not really recommended to add any 'init-text' for passwords, but you can.
 passwordbox() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -98,8 +106,9 @@ passwordbox() {
     --passwordbox "Enter your password:" 10 40
 }
 
-# Notice thaet for this specific instance, using `--clear` would
-# Cause issues, like a blank screen, because the menu only lasts
+# Syntax: dialog --infobox <text> <height> <width>
+# Notice that for this specific instance, using `--clear` would
+# cause issues, like a blank screen, because the menu only lasts
 # as long as the program or sleep command dictates
 infobox() { 
     dialog \ 
@@ -109,6 +118,7 @@ infobox() {
     sleep 2
 }
 
+# Syntax: dialog --textbox <file> <height> <width>
 textbox() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -116,6 +126,7 @@ textbox() {
     --textbox all_menus.sh 20 60
 }
 
+# Syntax: dialog --checklist <text> <height> <width> <list-height> <tag> <item> <status>
 checklist() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -126,6 +137,7 @@ checklist() {
     3 "Option 3" off
 }
 
+# Syntax: dialog --radiolist <text> <height> <width> <list-height> <tag> <item> <status>
 radiolist() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -136,6 +148,8 @@ radiolist() {
     3 "Option 3" off
 }
 
+# Syntax: dialog --gauge <text> <height> <width> <percent>
+# Notice this is piped | directly into the gauge dialog menu.
 gauge() {
     (
         for i in {1..100}; do
@@ -146,6 +160,7 @@ gauge() {
         --gauge "Loading..." 10 50 0
 }
 
+# Syntax: dialog --calendar <text> <height> <width> <day> <month> <year>
 calendar() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -154,6 +169,7 @@ calendar() {
 
 }
 
+# Syntax: dialog --timebox <text> <height> <width> <hour> <minute(s)> <second(s)>
 timebox() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -161,6 +177,7 @@ timebox() {
     --timebox "Set a time:" 10 50 12 30 00
 }
 
+# Syntax: dialog --fselect <directory> <height> <width>
 fselect() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -168,6 +185,7 @@ fselect() {
     --fselect ~/ 15 50
 }
 
+# Syntax: dialog --dselect <directory> <height> <width>
 dselect() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
@@ -175,6 +193,7 @@ dselect() {
     --dselect ~/ 15 50
 }
 
+# Syntax: dialog --form <text> <height> <width> <form-height> <label> <y> <x> <initial> <ylength> <xlength>
 form() {
     dialog --clear \
     --backtitle "$BACKTITLE" \
