@@ -753,7 +753,7 @@ show_menu
 - Skipping the menu itself, we capture the `EXIT_STATUS` to a variable
 - Next we use a simple `case` statement to loop through the `EXIT_STATUS`'s
 - Now for the fun, In exit code `3` we issue another `case` statement to loop through the `CHOICE` that we're hovering on.
-- After that we simple generate a generic msgbox to show the `INFO` that we want.
+- After that we generate a simple generic msgbox to show the `INFO` that we want.
 
 # Extensive ANSI Colors List (Terminal Only)
 ```bash
