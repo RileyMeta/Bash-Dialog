@@ -707,6 +707,53 @@ dynamic_text() {
 
 dynamic_text
 ```
+## Dynamic Extra Button
+To make a simple dynamic `<More Info>` button, we can employ some tricks we've used before:
+![image](https://github.com/user-attachments/assets/b02dbe46-c688-4992-a5c7-0afeb6ed48d7)
+```sh
+#!/bin/bash
+
+show_menu() {
+    while true; do
+        CHOICE=$(dialog --clear --title "Select an Option" \
+            --extra-button --extra-label "More Info" \
+            --cancel-label "Exit" \
+            --menu "Choose an item:" 15 50 5 \
+            1 "Item One" \
+            2 "Item Two" \
+            3 "Item Three" \
+            3>&1 1>&2 2>&3)
+
+        EXIT_STATUS=$?
+        
+        case $EXIT_STATUS in
+            0)  # OK was pressed
+                dialog --msgbox "You selected item $CHOICE." 6 40
+                ;;
+            3)  # Extra button (More Info) was pressed
+                case $CHOICE in
+                    1) INFO="Item One: This is the first option." ;;
+                    2) INFO="Item Two: This option is second." ;;
+                    3) INFO="Item Three: The third choice available." ;;
+                    *) INFO="No item selected!" ;;
+                esac
+                dialog --msgbox "$INFO" 6 50
+                ;;
+            1)  # Cancel was pressed
+                clear
+                exit 0
+                ;;
+        esac
+    done
+}
+
+show_menu
+```
+- First, we're wrapping the entire menu in a variable named `CHOICE`
+- Skipping the menu itself, we capture the `EXIT_STATUS` to a variable
+- Next we use a simple `case` statement to loop through the `EXIT_STATUS`'s
+- Now for the fun, In exit code `3` we issue another `case` statement to loop through the `CHOICE` that we're hovering on.
+- After that we simple generate a generic msgbox to show the `INFO` that we want.
 
 # Extensive ANSI Colors List (Terminal Only)
 ```bash
