@@ -56,4 +56,23 @@ So long as you don't explicitly tell the app to `exit` then it should re-open wh
 
 The layout of the above file only has 1 predefined function that gets called at the end of the file with `main`.
 
-> See the Advanced Menu Example for more information.
+> See the [Advanced Menu Example](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples/Advanced_Examples) for more information.
+
+## Adding Double Quotes or other special characters
+If attempting to display special characters like `" "` `$` `{ }` or similar you can cancel out them being rendered as actual code (and thus breaking your current code) by prefacing it with a `\`
+
+Example: 
+![image](https://github.com/RileyMeta/Bash-Dialog/assets/32332593/452a1b79-b41a-4cef-bb80-a7311071011c)
+```bash
+#!/bin/bash
+
+main() {
+    dialog --clear \
+    --backtitle "Double Quotes Tutorial" \
+    --colors \
+    --title "This is a simple Double Quotes Tutorial" \
+    --msgbox "\nIn bash if you preface special characters like \$ and \" you can display them in text." 0 0
+}
+
+main
+```
