@@ -264,7 +264,7 @@ Any of the above can be added to a Bash Script to add their respective effects
 > [!IMPORTANT]
 > The information in here might not be 100% accurate, please do your own research.
 > 
-> Everything I've accumulated here is from personal testing, if there are better ways to do things, please submit them in a Pull Request
+> Everything I've accumulated here is from personal testing, if there are better ways to do things, please submit them in a [Pull Request](https://github.com/RileyMeta/Bash-Dialog/pulls)
 
 
 # References
