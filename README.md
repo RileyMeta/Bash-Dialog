@@ -7,6 +7,25 @@ Along with tips and tricks for adding basic functionality with Bash scripting an
 Every example in this should be able to be run in the terminal with `./example-name`. You may need to use `chmod +x` to allow it to be executable. 
 
 ## Absolute Basics
+<details>
+  <summary>Installing Dialog</summary>
+
+#### Arch
+```sh
+sudo pacman -Sy dialog
+```
+#### Debian / Ubuntu
+```sh
+sudo apt update && apt upgrade -y
+sudo apt install dialog
+```
+#### Fedora
+```sh
+sudo dnf update
+sudo dnf install dialog
+```
+---
+</details>
 For a Dialog menu to function the only things you need are some basic flags
 ```bash
 dialog --msgbox "Hello World" 0 0
