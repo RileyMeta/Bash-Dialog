@@ -198,3 +198,98 @@ saveToFile() {
     esac
 }
 ```
+
+## Saving User Input (Text)
+![image](https://github.com/RileyMeta/Bash-Dialog/assets/32332593/7af1a271-210f-423f-8e1b-8bf4c0b07ae1)
+```bash
+#!/bin/bash
+
+get_user_input() {
+    local input
+    input=$(dialog --clear \
+    --backtitle "Dialog Tutorials" \
+    --title "Save User Input" \
+    --inputbox "Please type your Name:" 8 40 \
+    --output-fd 1)
+
+    if [ $? -eq 0 ]; then
+        clear
+        echo "User input: $input"
+    else
+        clear
+        echo "User pressed cancel."
+    fi
+}
+
+get_user_input
+```
+This might be a new way of invoking Dialog, but it's Virtually the same as the rest.
+- First we tell bash that we're going to be using `local` variables (in THIS function only).
+- Second we tell Bash that the function's name is `input` which we later envoke with `$input`.
+- Next we setup `dialog` as normal with our arguments and styling.
+- `--output-fd 1` will override and export the user-input to Exit Code `1` (stdout) which we call in the next part.
+- Lastly we make the actual `if`/`else` statement: When the user types something and presses the `< OK >` button it will echo it directly to the Terminal. When the `< Cancel >` button is pressed it will print "User pressed Cancel" to the Terminal. 
+> [!TIP]
+> If you would like to limit the amount of characters that the user can input, use `----max-input` (followed by a number) 
+
+## Advanced Menu Linking
+```bash
+#!/bin/bash
+
+# Collect the User's Name and Email
+USER_INFO=$(dialog --form "User Registration" 15 50 3 \
+    "Username:" 1 1 "" 1 10 20 0 \
+    "Email:" 2 1 "" 2 10 20 0 \
+    3>&1 1>&2 2>&3 3>&-)
+
+if [ $? -ne 0 ]; then
+    echo "Form entry was canceled."
+    exit 1
+fi
+
+# Parse the USER_INFO fields with sed
+USERNAME=$(echo "$USER_INFO" | sed -n '1p')
+EMAIL=$(echo "$USER_INFO" | sed -n '2p')
+
+# Collect Password // Allow Asterisk instead of Zero Response (--insecure)
+PASSWORD=$(dialog --insecure --passwordbox "Enter your password:" 10 40 3>&1 1>&2 2>&3 3>&-)
+
+if [ $? -ne 0 ]; then
+    echo "Password entry was canceled."
+    exit 1
+fi
+
+# Display the collected data
+dialog --msgbox "Username: $USERNAME\nEmail: $EMAIL\nPassword: (hidden)" 10 40
+```
+Here we're:
+- Saving the input provided by the user to the variables
+- Splitting the first input menu into 2 separate variables with the `sed` GNU Core Utility
+- Checking if either of the inputs were canceled and gracefully shutting down
+- Displaying the collected info with a --msgbox
+> [!NOTE]
+> The password will always display (hidden), this can be dynamically changed if you'd prefer
+
+## Dynamic Menu Selection
+If you're intending to have the menu items on a primary menu update and highlight the next option instead of defaulting to the Very First option, you can use 
+`--default-item` with any variable you need/want, in this case we'll use `"$default_item"`. By default `--default-item` is set to `1`, or the first menu item.
+
+To change each item you need to re-assign the value of `default_item` before the user returns to the primary menu.
+
+Example:
+```bash
+dialog --clear --title "Dynamic Text" \
+--default-item "$default_item"
+--menu "This is my menmu" 0 0 0
+...
+```
+Example changing menu item from another menu:
+```bash
+...
+if [[ $? = 0 ]]; then
+    default_item=2
+    main
+else
+    main
+fi 
+```
