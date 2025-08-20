@@ -26,6 +26,7 @@ sudo dnf install dialog
 ```
 ---
 </details>
+
 For a Dialog menu to function the only things you need are some basic flags
 ```bash
 dialog --msgbox "Hello World" 0 0
