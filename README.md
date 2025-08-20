@@ -191,7 +191,7 @@ Both of these use the same commands on purpose. When executed the first time it 
 ## Bash Coding
 Bash _is_ an entire scripting language. Although it may not be as powerful as something like C or Python, it does directly interact with the system kernel allowing you to perform powerful operations quickly.
 
-> See the Basic Example below for more info
+> See the [Basic Example](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples/Basic_Examples) for more info
 
 ### Linking multiple files
 Bash does allow for linking of multiple files as if they were a single file with one of the following:
