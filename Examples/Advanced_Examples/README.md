@@ -293,3 +293,5 @@ else
     main
 fi 
 ```
+---
+> [Go Back](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples)
