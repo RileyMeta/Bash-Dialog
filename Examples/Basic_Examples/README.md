@@ -130,4 +130,4 @@ dynamic_text() {
 dynamic_text
 ```
 ---
-[Go Back](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples)
+> [Go Back](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples)
