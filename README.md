@@ -37,7 +37,7 @@ dialog --msgbox "Hello World" 0 0
 
 `0 0` - defines the height/width of the dialog menu (0 = auto)
 > [!TIP]
-> If you want to make the < OK > button perform functions (like going back to the previous menu) you can use a `case` function to capture and assign the Exit Code `0`.
+> If you want to make the < OK > button perform functions (like going back to the previous menu) you can use a `case` statement to capture and assign the Exit Code `0`.
 >
 > We will go over this more in just a moment.  
 
