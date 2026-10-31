@@ -167,7 +167,7 @@ The direct outputs of these can be both defined in the later section, and or cal
 When stringing together commands there are a few ways to run multiple commands:
 
 `;` - A completely sequential continuation of commands, requires the previous command to end first (Does not acknowledge Exit Codes):
-> `mkdir /tmp/test ; tough /tmp/test/ThisIsATest`
+> `mkdir /tmp/test ; touch /tmp/test/ThisIsATest`
 
 `&` - Executes commands in the background, does not require previous commands to end (Good for Parallelization):
 > `mkdir /tmp/test1 & mkdir /tmp/test2` | Not related to `&&`
