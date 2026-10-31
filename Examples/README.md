@@ -1,5 +1,5 @@
 # Table of Contents
-I've broken up the gigantic README into individual sections, that seems a little easier to manager.
+I've broken up the gigantic README into individual sections, that seems a little easier to manage.
 
 ## Folders
 - [All_Menus](https://github.com/RileyMeta/Bash-Dialog/tree/main/Examples/All_Menus) - An interactive example that shows off all of the available menus
